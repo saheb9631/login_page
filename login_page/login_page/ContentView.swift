@@ -12,9 +12,7 @@ struct ContentView: View {
     @State var pass = ""
     var body: some View {
         VStack {
-            Image("img1").resizable().frame(width: 200, height: 200)
-                .imageScale(.large)
-                .foregroundStyle(.tint).ignoresSafeArea().padding()
+            Image("img1").resizable().scaledToFit()
             
             Text("Login").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).bold()
             Text("Why work hard if you can work smart").font(.subheadline)
@@ -26,19 +24,19 @@ struct ContentView: View {
                         
                     
                 }
-            SecureField("password", text: $pass)
+            SecureField("Password", text: $pass)
                 .padding()
                 .overlay{
                     RoundedRectangle(cornerRadius: 8).stroke(.black)
                 }
             
             Button{
-                print("login")
+                print("Login")
             }label: {
-                Text("login")
+                Text("Login")
                 
                 
-                    .font(.title)
+                    .font(.title2)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity, minHeight: 50)
                             .background(Color.blue)
